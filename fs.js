@@ -2,12 +2,18 @@ const path = require('path');
 const fs = require('fs');
 
 const path1 = path.join(__dirname, 'files');
+
+fs.readdir(path1, (err, files) => {
+    if (err) {
+        console.log(err);}
+    else {
+        files.forEach((items)=>{console.log(items)})}});
 // console.log(path1)
-if(!fs.existsSync(path1)){
-    fs.mkdirSync(path1);}
-for(i=0; i<4; i++){
-    fs.writeFileSync(path1+"/hello"+i+".txt", 'Hello World')
-}
+// if(!fs.existsSync(path1)){
+//     fs.mkdirSync(path1);}
+// for(i=0; i<4; i++){
+//     fs.writeFileSync(path1+"/hello"+i+".txt", 'Hello World')
+// }
 
 // const fs = require('fs');
 // const path = require('path');
